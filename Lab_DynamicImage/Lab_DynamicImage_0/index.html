@@ -7,7 +7,7 @@
 <body>
 
 <p>...</p>
-
+<div id = debug></div>
 <!-- 
 TODO:
 請檢視以下這段 HTML，設計師用 <a> 與 <img> 做了
@@ -22,5 +22,42 @@ TODO:
 </a>
 
 <p>...</p>
+<script>
+  
+  let imgData = [];
+  imgData[0] = ["images/chc.gif",
+                "images/oak.gif",
+                "images/sd.gif",
+                "images/was.gif"]
+  imgData[1] = ["http://chicago.cubs.mlb.com/",
+                "http://oakland.athletics.mlb.com/",
+                "http://sandiego.padres.mlb.com/",
+                "http://washington.nationals.mlb.com/"];
+                
+  let ran = 2;
+
+  function setImage(){
+  // let ran = Math.floor(Math.random() * imgData[0].length)
+
+  document.getElementById("imgs").src= imgData[0][ran%4];
+  document.getElementById("imgshref").href=imgData[1][ran];
+    ran++;
+  debug.innerText=ran;
+  //   if(ran>imgData.length+1)
+  //     ran=0;
+  }
+  window.setInterval(setImage,1000);
+  
+  // switch (ran){
+  //   case 0:
+  //     img1.src="images/chc.gif";
+  //   case 1:
+  //     img1.src="images/oak.gif";
+  //   case 2:
+  //     img1.src="images/sd.gif";
+  //   case 3:
+  //     img1.src="images/was.gif";
+  // }
+</script>
 </body>
 </html>
