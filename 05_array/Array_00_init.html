@@ -2,12 +2,17 @@
 <html>
 <head>
     <title>JavaScript Array</title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <style>
+        td{
+            padding: 0 10px;
+        }
+    </style>
 </head>
 <body>
 
     <input type="button" id="test" value="click me to test your code" />
-    <div id="report"></div>
+    <br><hr><div id="report"></div>
 
 <script>
 
@@ -19,11 +24,26 @@ test.onclick = function () {
     // 
     // 任務: 
     // 請建立一個陣列，內容依序為: 3, 0, 1, 8, 7, 2, 5, 4, 9, 6
+    var arr = [3, 0, 1, 8, 7, 2, 5, 4, 9, 6];
+    var str;
+    str = `<table border=1><tr><td>${arr.join(" | ")}</td><td>init</td></tr>`; 
+    arr.splice(0,1,9);
+    str += `<tr><td>${arr.join(" | ")}</td><td>splice(0, 1, 9)</td></tr>`; 
     
+    var pop = arr.pop();
+    str += `<tr><td>${arr.join(" | ")}<td>pop()= ${pop}`; 
+    arr.push(3);
+    str += `<tr><td>${arr.join(" | ")}</td><td> push(3)</td></tr> `; 
+    var shift = arr.shift();
+    str += `<tr><td>${arr.join(" | ")}</td><td>shift()=${shift}</td></tr>`;
+    arr.unshift(5);
+    str += `<tr><td>${arr.join(" | ")}</td><td> unshift(5)</td></tr></table>`; 
+    report.innerHTML = str;
+
+
+
+
     
-
-
-
 
 }  // end of test.onclick
 

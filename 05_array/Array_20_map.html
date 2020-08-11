@@ -25,10 +25,10 @@ test.onclick = function () {
 
     // 你的任務程式...
     
-    var dataList = [];
+    var dataList = data.map(function(item,idx){return `<tr><td>${idx}</td><td>${item}</td></tr>`;});
     
 
-    report.innerText = dataList.toString();
+    report.innerHTML = "<table border=1>"+dataList.join("")+"</table>";
 
 
 }  // end of test.onclick

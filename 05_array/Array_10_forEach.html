@@ -26,8 +26,11 @@ test.onclick = function () {
 
     // 你的任務程式...
     
-    
-    
+    data.forEach(function(x,y){
+        console.log(x);
+        alert(y);
+        sum += x;
+    })
 
     report.innerText = sum;
 

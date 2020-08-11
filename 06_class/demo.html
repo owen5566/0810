@@ -11,7 +11,53 @@
     <div id="debug"></div>
 
     <script>
-
+    var obj = [{
+        face:"o0o" , 
+        leftHand:"\\",
+        rightHand:"/"
+    },{}]
+    debug.innerHTML = obj[0].leftHand + obj[0].face + obj[0].rightHand;
+        phone = function() {
+            this.os = "android";
+            this.color = 'black';
+        }
+        htc = new phone();
+        debug.innerHTML+= `<br>htc : ${htc.os}`;
+    
+    class emoji{
+        constructor(face, leftHand, rightHand){
+            this._face = face;
+            this.leftHand = leftHand;
+            this.rightHand = rightHand;
+        }
+        get face(){
+            return this._face;
+        }
+        set face(changeFace){
+            this._face = changeFace;
+        }
+        
+        showEmo(){
+            return this.leftHand+this.face+this.rightHand;
+        }
+    }
+    var amazing = new emoji("o0o","\\","/");
+    amazing.leftHand="/";
+    amazing.rightHand="\\";
+    amazing.face="owo";
+    alert(amazing.showEmo());
+    
+    class emojiWord extends emoji{
+        constructor(face,lh,rh,word){
+            super(face,lh,rh)
+            this.word = word
+        }
+        showEmo(){
+            return this.leftHand+this.face+this.rightHand+this.word;
+        }
+    }
+    var angryWord = new emojiWord(" ˋ_ˊ ","o","凸","7414");
+    alert(angryWord.showEmo());
 
 
     </script>
